@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'aitrade',
     'dashboard',
     'account',
-    'django.contrib.admin',
+    # 'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
