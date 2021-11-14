@@ -12,6 +12,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '54.66.254.51',
+    '54.66.90.115',
     'aitrade.site',
     'www.aitrade.site',
 ]
