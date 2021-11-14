@@ -38,7 +38,7 @@ urlpatterns = [
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('dashboard/', include('dashboard.urls'), name='dashboard'),
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
     path("password_reset/", auth_views.PasswordResetView.as_view(template_name="account/password_reset.html"),
          name="password_reset"),
     path("password_reset/done/",
