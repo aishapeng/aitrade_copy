@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""/>
+    {# Load the tag library #}
+    {% load bootstrap5 %}
+
+    {# Load CSS and JavaScript#}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    {% block head_script %}{% endblock head_script %}
+    <title>AiTrade</title>
+</head>
+<body>
+{# Nav Bar #}
+<div class="navbar navbar-expand-lg navbar-light bg-light align-items-center p-2 px-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">AiTrade</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+                {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+                </li>
+                {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'getting_started' %}">Getting Started</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'help' %}">Help</a>
+                </li>
+            </ul>
+            {% if request.user.is_authenticated %}
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.binance.com/en/fiat/deposit/MYR" target="_blank">Deposit</a>
+                </li>
+                <li class="nav-item text-dark mt-2">
+                    <div>Hello, {{ request.user.username }} | <a href="{% url 'logout' %}">Logout</a></div>
+                </li>
+            </ul>
+
+            {% else %}
+            <!--            <div class="ms-auto"><a href="{% url 'login' %}" class="text-decoration-none">Login</a> | <a-->
+            <!--                    href="{% url 'register' %}"-->
+            <!--                    class="text-decoration-none">Register</a>-->
+            <!--            </div>-->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Join Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+
+
+</div>
+{% block content %} {% endblock %}
+{% block script %}{% endblock script %}
+</body>
+</html>

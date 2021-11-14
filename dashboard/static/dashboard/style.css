@@ -1,0 +1,85 @@
+#sidebar{
+    width: 225px;
+    max-height: 100vh;
+}
+.home-bg{
+    max-height: 100vh;
+}
+
+.binance-img{
+    max-height: 300px;
+}
+
+.instruction{
+    padding: 100 px;
+  }
+
+@media (max-width: 1000px) {
+  #sideButton {
+    visibility: visible;
+  }
+  #closeSidebar{
+    visibility: visible;
+  }
+  #sidebar{
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    z-index: 10000;
+    left: 0;
+  }
+  #assetChart{
+    max-width: 200px;
+    max-height: 200px;
+  }
+  #pnlChart{
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 760px) {
+  a{
+    display: inline;
+    font-size: 13px;
+  }
+
+  h4{
+    font-size: 16px;
+  }
+
+  #orderHistory{
+    font-size: 13px;
+  }
+
+  .binance-img{
+    max-width: 100vh;
+  }
+
+  .instruction{
+    padding: 10 px;
+  }
+}
+  .bg-text{
+    z-index: 1000;
+  }
+
+@media (max-width: 400px) {
+  .binance-img{
+    max-width: 30vh;
+  }
+}
+
+@media (min-width: 1000px) {
+    #sideButton {
+      display: none;
+    }
+    #closeSidebar{
+      display: none;
+    }
+    #assetChart{
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+}
+

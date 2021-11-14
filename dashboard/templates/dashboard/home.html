@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block head_script %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'dashboard/style.css' %}">
+
+{% endblock head_script %}
+{% block content %}
+{% csrf_token %}
+<div class="container-fluid">
+    <div class="row ps-5 pe-0">
+        <div class="col-lg-6 pt-5">
+            <div class="mb-5">
+                <h3>Welcome to AiTrade!</h3>
+                <p class="pe-4 pt-3">{{welcome_msg}}</p>
+
+                <a href="{% url 'register' %}"><button type="button" class="btn btn-outline-primary me-3">Join Us</button></a>
+                <a href="{% url 'login' %}"><button type="button" class="btn btn-outline-primary">Login</button></a>
+
+            </div>
+            <div class="row">
+                <h3>How it works?</h3>
+                <p class="pe-4 pt-3">{{how_it_works}}</p>
+                <p class="text-muted">For more info, please refer <a href="{% url 'getting_started' %}">here</a></p>
+            </div>
+        </div>
+        <div class="col-lg-6 p-0">
+            <div class="d-flex justify-content-center bd-highlight">
+                {% load static %}
+            <img src="{% static 'dashboard/img.jpg' %}" class="img-fluid home-bg" alt="background image">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

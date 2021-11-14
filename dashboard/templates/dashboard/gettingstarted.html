@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block head_script %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'dashboard/style.css' %}">
+
+{% endblock head_script %}
+{% block content %}
+{% csrf_token %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8 pt-5 ps-5">
+            <div class="mb-5">
+                <h3 id="step1">1. Get a Binance Account</h3>
+                <p class="pe-4 pt-3">{{binance_msg}}</p>
+                <p class="pe-4 pt-3">You can create your own Binance account <a
+                        href='https://accounts.binance.com/en/register'>here</a></p>
+            </div>
+            <div class="mb-5">
+                <h3 id="step2">2. Get Binance API Key</h3>
+                <p class="pe-4 pt-3">{{api_msg}}</p>
+                <div class="ms-3"><p class="fw-bold">1. After logging into your Binance account, click [API Management]
+                    from the user center icon</p>
+                    <img src="https://public.bnbstatic.com/image/cms/article/body/202108/33f69821ba6eea7dd4eabefb9ceb2cfd.png"
+                         class="binance-img ms-3 mb-3">
+                    <br>
+                    <p class="fw-bold">2. Enter a label/name for your API key and click [Create API].</p>
+                    <p>Security tip: Before creating an API, you need to enable two-factor authentication (2FA) on your
+                        account.</p>
+                    <img src="https://public.bnbstatic.com/image/cms/article/body/202108/0268a0d144dc44e90113bea9677b019a.png"
+                         class="binance-img ms-3 mb-3">
+                    <br>
+                    <p class="fw-bold">3. Complete the security verification with your registered 2FA devices.</p>
+                    <img src="https://public.bnbstatic.com/image/cms/article/body/202108/5e047e4d4aacc07523f3b79aed05c319.png"
+                         class="binance-img ms-3 mb-3">
+                    <br>
+                    <p class="fw-bold">4. Your API is now created. Please keep your Secret Key securely as will not be
+                        shown again. Do not
+                        share this key with anyone. If you forget your Secret Key, you will need to delete the API and
+                        create a new one.</p>
+                    <p class="text-danger">Note: Please enable reading and spot margin trading for this to work.</p>
+                    <img src="https://public.bnbstatic.com/image/cms/article/body/202108/400ceeb1e685fe65c8b58976e7e2e89d.png"
+                         class="binance-img ms-3 mb-3">
+                </div>
+
+            </div>
+            <div class="mb-5">
+                <h3 id="step3">3. Get a AiTrade Account</h3>
+                <p class="pe-4 pt-3">You can create your own AiTrade account <a
+                        href="{% url 'register' %}">here</a></p>
+            </div>
+            <div class="mb-5">
+                <h3 id="step4">4. Start/Stop Trading</h3>
+                <p class="pe-4 pt-3">To start trading a selected pair, just toggle the switch.</p>
+                <p class="text-danger">Note: In order to start trading a pair, please ensure there is at least 100 USDT in your Binance account.</p>
+                    <img src="{% static 'dashboard/start_trading.png' %}"
+                         class="binance-img ms-3 mb-3">
+            </div>
+            <div class="mb-5">
+                <h3 id="step5">5. Account Monitoring</h3>
+                <p class="pe-4 pt-3">As a user, you are able to keep track of your order history to see the orders made by our trading bot.</p>
+                    <img src="{% static 'dashboard/order_history.png' %}"
+                         class="binance-img ms-3 mb-3">
+                <p class="pe-4 pt-3">You will also be able to keep track of your profit and losses by clicking on the PNL button.</p>
+                    <img src="{% static 'dashboard/pnl.png' %}"
+                         class="binance-img ms-3 mb-3">
+            </div>
+        </div>
+        <div class="col-lg-4 p-5">
+            <div class="text-muted position-fixed ">
+                <h6>On this page</h6>
+                <hr>
+                <a href="#step1" class="text-decoration-none text-muted">1. Create Binance Account</a><br>
+                <a href="#step2" class="text-decoration-none text-muted">2. Get Binance API Key</a><br>
+                <a href="#step3" class="text-decoration-none text-muted">3. Create AiTrade Account</a><br>
+                <a href="#step4" class="text-decoration-none text-muted">4. Start/Stop Trading</a><br>
+                <a href="#step5" class="text-decoration-none text-muted">5. Account Monitoring</a><br>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

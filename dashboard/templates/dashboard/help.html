@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block head_script %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'dashboard/style.css' %}">
+
+{% endblock head_script %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row pe-0">
+        <div class="col-lg-6 pt-3 ps-sm-5">
+            <p class="text-muted">Trouble setting up? Click <a href="{% url 'getting_started' %}">here</a></p>
+            <form method='POST'>{% csrf_token %}
+                {% for field in form %}
+                <div class='p-1 m-2'>
+                    {{field.label_tag}}
+                    {{field}}
+
+                </div>
+                {% endfor %}
+
+                {% for field in form %}
+                {% for error in field.errors %}
+                <p style="color:red;">{{error}}</p>
+                {% endfor %}
+                {% endfor %}
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+
+        </div>
+        <div class="col-lg-6 ps-5 img">
+            <div class="d-flex flex-row-reverse bd-highlight">
+                <img src="{% static 'dashboard/mail.jpg' %}" class="w-100 position-relative"
+                     alt="background image">
+                <h1 class="bg-text fw-bold col-4 text-white position-absolute p-5">Please write us a message, we will be
+                    with you
+                    shortly.</h1>
+            </div>
+        </div>
+        <!-- Button trigger modal -->
+        <button type="button" class="invisible modalBtn" data-bs-toggle="modal" data-bs-target="#sentModal"></button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="sentModal" tabindex="-1" aria-labelledby="sentModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="sentModalLabel">Message sent</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Thanks for the feedback. Please wait for our response. We will get back to you as soon as possible.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
+{% block script %}
+<script>
+    {% if sent %}
+        $('.modalBtn').trigger( "click" );
+    {% endif %}
+    window.onload = resize;
+    window.onresize = resize;
+    function resize() {
+      if (window.matchMedia("(max-width: 1000px)").matches) {
+            console.log("OK");
+            $('.img').addClass('collapse');
+        } else {
+            $('.img').removeClass('collapse');
+        }
+    }
+
+
+
+
+</script>
+{% endblock script %}

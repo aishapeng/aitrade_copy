@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %} 
+    <div class="container-fluid py-4 form-group col-md-4">
+    <h2 class="text-center">Register</h2>
+        <form method='POST'>{% csrf_token %}
+            {% for field in registration_form %}
+                <div class='p-1'>
+                {{field.label_tag}}
+                {{field}}
+
+                {% if field.help_text %}
+                {{field.help_text}}
+                {% endif %}
+
+                {% for error in field.errors %}
+                    <p style="color:red;">{{error}}</p>
+                {% endfor %}
+                </div>
+            {% endfor %}
+            {% if registration_form.non_field_errors %}
+                <div style="color:red;">{{registration_form.non_field_errors}}</div>
+            {% endif %}
+            <br>
+            <small style="color:gray;">Already have an account? Login <a href="{% url 'login' %}">here</a></small>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+{% endblock content %} 
