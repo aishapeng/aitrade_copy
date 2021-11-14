@@ -26,9 +26,9 @@ except:
 
 date = timezone.datetime.today()
 midnight = date.replace(hour=00, minute=00, second=00)
-load_model(schedule=5)
-act(schedule=midnight, repeat=3600)  # repeat 1 hr
-save_pnl(schedule=midnight, repeat=86400)  # repeat 24 hrs
+# load_model(schedule=5)
+# act(schedule=midnight, repeat=3600)  # repeat 1 hr
+# save_pnl(schedule=midnight, repeat=86400)  # repeat 24 hrs
 
 urlpatterns = [
     path('', home_view, name='home'),
