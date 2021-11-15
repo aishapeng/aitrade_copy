@@ -158,7 +158,7 @@ class Account(AbstractBaseUser):
             #
             # balances['XLM'] = self.balance_xlm
 
-            return balances
+        return balances
 
         # except:
         #     return 0
