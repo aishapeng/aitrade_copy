@@ -106,7 +106,7 @@ class Account(AbstractBaseUser):
         if self.balance_btc > 0:
             balances['BTC'] = self.balance_btc
 
-        if self.balance_ETH > 0:
+        if self.balance_eth > 0:
             balances['ETH'] = self.balance_eth
 
         if self.balance_xrp > 0:
