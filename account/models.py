@@ -100,38 +100,44 @@ class Account(AbstractBaseUser):
             return 0
 
     def get_balances(self):
-        try:
+        # try:
             # result = self.client.get_account()
-            balances = {}
-            if self.balance_btc > 0:
-                balances['BTC'] = self.balance_btc
+        balances = {}
+        if self.balance_btc > 0:
+            balances['BTC'] = self.balance_btc
 
-            if self.balance_ETH > 0:
-                balances['ETH'] = self.balance_eth
+        if self.balance_ETH > 0:
+            balances['ETH'] = self.balance_eth
 
-            if self.balance_xrp > 0:
-                balances['XRP'] = self.balance_xrp
+        if self.balance_xrp > 0:
+            balances['XRP'] = self.balance_xrp
 
-            if self.balance_ltc > 0:
-                balances['LTC'] = self.balance_ltc
+        if self.balance_ltc > 0:
+            balances['LTC'] = self.balance_ltc
 
-            if self.balance_bch > 0:
-                balances['BCH'] = self.balance_bch
+        if self.balance_bch > 0:
+            balances['BCH'] = self.balance_bch
 
-            if self.balance_ada > 0:
-                balances['ADA'] = self.balance_ada
+        if self.balance_ada > 0:
+            balances['ADA'] = self.balance_ada
 
-            if self.balance_bnb > 0:
-                balances['BNB'] = self.balance_bnb
+        if self.balance_bnb > 0:
+            balances['BNB'] = self.balance_bnb
 
-            if self.balance_link > 0:
-                balances['LINK'] = self.balance_link
+        if self.balance_link > 0:
+            balances['LINK'] = self.balance_link
 
-            if self.balance_dot > 0:
-                balances['DOT'] = self.balance_dot
+        if self.balance_dot > 0:
+            balances['DOT'] = self.balance_dot
 
-            if self.balance_btc > 0:
-                balances['XLM'] = self.balance_xlm
+        if self.balance_xlm > 0:
+            balances['XLM'] = self.balance_xlm
+
+        if self.balance_usdt > 0:
+            balances['USDT'] = self.balance_usdt
+
+        if len(balances) == 0:
+            balances['BTC'] = 0
             # balances['BTC'] = self.balance_btc
             #
             # balances['ETH'] = self.balance_eth
@@ -154,8 +160,8 @@ class Account(AbstractBaseUser):
 
             return balances
 
-        except:
-            return 0
+        # except:
+        #     return 0
 
     def get_trade_quantity(self):
         self.count = 0
