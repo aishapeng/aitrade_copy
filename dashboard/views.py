@@ -86,10 +86,11 @@ def index(request, symbol="BTC"):
 
     # user.get_client()  # connect to Binance api
     balances = user.get_balances()
-    try:
-        usdt = round(balances['USDT'], 2)
-    except:
-        usdt = 0
+    usdt = user.balance_usdt
+    # try:
+    #     usdt = round(balances['USDT'], 2)
+    # except:
+    #     usdt = 0
 
     pnl_last = user.get_pnl_last()
     pnl_all = user.get_pnl_all()
