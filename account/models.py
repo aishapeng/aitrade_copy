@@ -240,6 +240,8 @@ class Account(AbstractBaseUser):
                     else:
                         quantity = round_down(quantity, 4)
 
+                    quantity = float(quantity)
+
                     if symbol == "BTC":
                         self.balance_btc += quantity
 
@@ -340,6 +342,8 @@ class Account(AbstractBaseUser):
                         balance = round_down(balance, 2)
                     else:
                         balance = round_down(balance, 4)
+
+                    balance = float(balance)
 
                     if symbol == "BTC":
                         self.balance_btc -= balance

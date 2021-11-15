@@ -102,6 +102,7 @@ function get_asset_chart(){
         if ( '{{coin.symbol}}' in {{balances}} ){
             var id = "#{{coin.symbol}}USDT";
             var price = $(id).html();
+
             assetValue['{{coin.symbol}}'] = parseFloat({{balances}}['{{coin.symbol}}']) * parseFloat(price);
         }
     {% endfor %}
