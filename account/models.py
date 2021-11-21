@@ -389,7 +389,7 @@ class Account(AbstractBaseUser):
                         symbol=symbol,
                         price=price,
                         quantity=balance,
-                        type='BUY'
+                        type='SELL'
                     )
                     o.save()
                     # order = self.client.order_market_sell(
