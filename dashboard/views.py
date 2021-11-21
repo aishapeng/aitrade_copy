@@ -101,7 +101,7 @@ def index(request, symbol="BTC"):
         'symbol': symbol,
         'coin_list': coin_list,
         'balances': mark_safe(balances),
-        'usdt': usdt,
+        'usdt': round(usdt, 2),
         'kline': mark_safe(kline),
         'pnl_last': pnl_last,
         'pnl_all': mark_safe(pnl_all),
