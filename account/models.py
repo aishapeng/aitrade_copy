@@ -428,16 +428,16 @@ class Account(AbstractBaseUser):
         #     if str(key) in price_list:
         #         sum += balances[str(key)] * float(price_list[str(key)])
         sum = 0
-        sum += self.balance_btc
-        sum += self.balance_eth
-        sum += self.balance_xrp
-        sum += self.balance_ada
-        sum += self.balance_ltc
-        sum += self.balance_bnb
-        sum += self.balance_bch
-        sum += self.balance_link
-        sum += self.balance_dot
-        sum += self.balance_xlm
+        sum += self.balance_btc * float(price_list['BTC'])
+        sum += self.balance_eth * float(price_list['ETH'])
+        sum += self.balance_xrp * float(price_list['XRP'])
+        sum += self.balance_ada * float(price_list['ADA'])
+        sum += self.balance_ltc * float(price_list['LTC'])
+        sum += self.balance_bnb * float(price_list['BNB'])
+        sum += self.balance_bch * float(price_list['BCH'])
+        sum += self.balance_link * float(price_list['LINK'])
+        sum += self.balance_dot * float(price_list['DOT'])
+        sum += self.balance_xlm * float(price_list['XLM'])
         sum += self.balance_usdt
 
         asset = AssetHistory(
