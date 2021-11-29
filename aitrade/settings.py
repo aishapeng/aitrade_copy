@@ -57,10 +57,12 @@ MIDDLEWARE = [
 USE_X_FORWARDED_HOST = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-CSRF_TRUSTED_ORIGINS = ['aitrade.site',
-                        'www.aitrade.site',
-                        '54.66.90.115',
-                        ]
+# CSRF_TRUSTED_ORIGINS = ['aitrade.site',
+#                         'www.aitrade.site',
+#                         '54.66.90.115',
+#                         ]
+
+CSRF_COOKIE_SECURE = False
 
 
 ROOT_URLCONF = 'aitrade.urls'
