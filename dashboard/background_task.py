@@ -65,6 +65,7 @@ def act():
         df = df[1:]  # remove 1st row after normalize
         state = df.to_numpy()
         action = agent.act(state)
+        print(coin, action)
 
         if action == 0:
             return 0
