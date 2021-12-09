@@ -50,7 +50,8 @@ function get_balance(){
             var id = "#{{coin.symbol}}USDT";
             var price = $(id).html();
             sum += {{balances}}['{{coin.symbol}}'] * price;
-            $("#{{coin.symbol}}_balance").html({{balances}}['{{coin.symbol}}']+" {{coin.symbol}}");
+            var bal = parseFloat({{balances}}['{{coin.symbol}}']).toFixed(4);
+            $("#{{coin.symbol}}_balance").html(bal +" {{coin.symbol}}");
         }
         else{
             $("#{{coin.symbol}}_balance").html("0 {{coin.symbol}}");
