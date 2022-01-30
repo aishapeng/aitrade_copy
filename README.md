@@ -16,6 +16,7 @@ As CNN is highly sensitive, LSTM is implemented to indtroduce temporal delay. </
 <br>
 <h2>Register Page</h2>
 
+![image](https://user-images.githubusercontent.com/55709960/151690494-7139b60f-a5fa-4c9f-aa00-2f4657d43aef.png)
 
 
 
