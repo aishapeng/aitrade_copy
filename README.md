@@ -6,4 +6,6 @@
 <p>The deep learning architecture is a CNN-LSTM model. CNN is used to extract features and create the relation of market information input. 
 As CNN is highly sensitive, LSTM is implemented to indtroduce temporal delay. </p>
 
+<h2>Home Page</h2>
+![image](https://user-images.githubusercontent.com/55709960/151690405-7d04ff02-2dce-4a7e-ba9d-52ee349e7e50.png)
 
